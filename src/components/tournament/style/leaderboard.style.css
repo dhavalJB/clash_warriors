@@ -1,0 +1,300 @@
+/* Root Variables for Theme */
+:root {
+  --neon-red: #ff003c;
+  --neon-blue: #00aaff;
+  --neon-pink: #ff00ff;
+  --neon-yellow: #ffd700;
+  --neon-green: #00ff99;
+  --holo-gradient: linear-gradient(
+    90deg,
+    var(--neon-red),
+    var(--neon-blue),
+    var(--neon-pink)
+  );
+  --holo-glow: 0px 0px 15px rgba(255, 0, 255, 0.8);
+  --neon-glow: 0px 0px 12px rgba(0, 255, 255, 0.8);
+}
+
+/* Leaderboard Container */
+.leaderboard-container {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  border: 2px solid rgba(255, 0, 0, 0.5);
+  box-shadow: 0px 0px 25px var(--neon-red);
+  backdrop-filter: blur(10px);
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+  overflow-y: auto;
+  scrollbar-width: 0px;
+  scrollbar-color: var(--neon-red) rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, rgba(10, 10, 40, 0.95), rgba(70, 10, 10, 0.95));
+  background-size: cover;
+  background-blend-mode: overlay;
+}
+
+/* Animated Grid Overlay */
+.leaderboard-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 0, 0, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 35px 35px;
+  opacity: 0.25;
+  animation: neonGridMove 6s linear infinite;
+  z-index: -1;
+}
+
+/* Glow Border Effect */
+.leaderboard-container::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 3px solid rgba(255, 0, 0, 0.6);
+  filter: drop-shadow(0 0 15px var(--neon-red));
+  z-index: -1;
+}
+
+/* Animate the grid for a digital futuristic effect */
+@keyframes neonGridMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 35px 35px;
+  }
+}
+
+/* Cyberpunk Text */
+.leaderboard-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 26px;
+  text-transform: uppercase;
+  color: var(--neon-red);
+  text-shadow: 0 0 15px var(--neon-red);
+  background: var(--holo-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowText 2s infinite alternate;
+  margin-bottom: 15px;
+}
+
+/* Top 3 Section */
+.leaderboard-top3 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+/* Top 3 Players */
+.top3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  width: 90px;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 10px;
+  padding: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 0, 0, 0.2),
+    rgba(0, 0, 255, 0.2)
+  );
+  box-shadow: var(--holo-glow);
+}
+
+/* Rank Effects */
+.top3-1 {
+  transform: translateY(-15px) scale(1.3);
+  border: 2px solid var(--neon-red);
+}
+.top3-2 {
+  transform: translateY(5px) scale(1.1);
+  border: 2px solid var(--neon-blue);
+}
+.top3-3 {
+  transform: translateY(5px) scale(1);
+  border: 2px solid var(--neon-yellow);
+}
+
+/* Avatar Styles */
+.top3-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #ffffff;
+  box-shadow: var(--neon-glow);
+  margin-bottom: 5px;
+}
+
+/* Leaderboard Table */
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+/* Table Header */
+.leaderboard-thead {
+  background: var(--holo-gradient);
+  text-transform: uppercase;
+}
+
+.leaderboard-header-row th {
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: var(--holo-glow);
+}
+
+/* Table Rows */
+.leaderboard-row {
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+  transform: translateY(0);
+  font-size: 16px;
+  padding: 12px;
+  height: 45px;
+}
+
+/* Alternating Row Colors */
+.leaderboard-row:nth-child(even) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.leaderboard-row:hover {
+  box-shadow: var(--holo-glow);
+  transform: scale(1.02);
+}
+
+/* Glowing Highlight for Logged-in User */
+.leaderboard-highlight {
+  background: rgba(255, 215, 0, 0.3) !important;
+  font-weight: bold;
+  text-shadow: var(--holo-glow);
+}
+
+/* Glow Text Animation */
+@keyframes glowText {
+  from {
+    text-shadow: 0px 0px 10px var(--neon-red);
+  }
+  to {
+    text-shadow: 0px 0px 20px var(--neon-blue);
+  }
+}
+
+.leaderboard-container::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for Firefox */
+.leaderboard-container {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+@media (max-width: 400px) {
+  .leaderboard-container {
+    width: 100%;
+    max-width: 100%; /* Full width for small screens */
+    height: 100vh;
+    border-radius: 0; /* Remove rounded corners for full-screen effect */
+  }
+
+  .leaderboard-title {
+    font-size: 20px; /* Reduce title size */
+  }
+
+  .leaderboard-top3 {
+    flex-direction: row; /* Stack top 3 vertically */
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .top3 {
+    width: 70px; /* Smaller player cards */
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+  .top3-avatar {
+    width: 45px;
+    height: 45px;
+  }
+
+  .leaderboard-table {
+    margin-top: 10px;
+  }
+
+  .leaderboard-header-row th {
+    padding: 8px;
+    font-size: 12px; /* Reduce text size */
+  }
+
+  .leaderboard-row {
+    font-size: 14px;
+    padding: 8px;
+    height: 35px;
+  }
+  
+  /* Hide Scrollbar */
+  .leaderboard-container::-webkit-scrollbar {
+    display: none;
+  }
+  .leaderboard-container {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}
+
+.leaderboard-sticky {
+  position: sticky;
+  bottom: 0;
+  
+  /* Premium Neon Gradient */
+  background: linear-gradient(135deg, #8100cc, #ff00ff, #00aaff) !important;
+  background-size: 300% 300%; /* Stretch gradient for shimmer effect */
+  animation: gradientShimmer 6s ease-in-out infinite; /* Adding shimmer animation */
+  
+  color: #ffffff; /* White text to ensure readability */
+  z-index: 10;
+  padding: 10px 0; /* Optional padding for better row spacing */
+  
+  /* Glowing Effect */
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8); /* Premium glowing effect */
+}
+
+/* Shimmer Gradient Animation */
+@keyframes gradientShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+

@@ -1,0 +1,158 @@
+.daily-mission-container {
+  background: linear-gradient(135deg, #000000 30%, #0a0000 70%);
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.daily-mission-image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  z-index: 5;
+}
+
+.daily-mission-image-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 80%;
+  max-width: 400px;
+  z-index: 5;
+}
+
+.daily-mission-ad-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 5;
+}
+
+.daily-mission-overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 80%;
+  max-width: 300px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.daily-mission-ad-image[style*="not-allowed"] {
+  opacity: 0.6;
+  filter: grayscale(50%);
+  z-index: 5;
+}
+
+/* ✅ Social Section */
+.daily-mission-social-section {
+  margin-top: 30px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  text-align: center;
+  z-index: 5;
+}
+
+/* ✅ Social List */
+.daily-mission-social-list {
+  list-style: none;
+  z-index: 5;
+}
+
+/* ✅ Social Item */
+.daily-mission-social-item {
+  margin-top: 5px;
+  margin-left: 10px;
+  z-index: 5;
+}
+
+/* ✅ Social Link Container (Horizontal Layout) */
+.daily-mission-social-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Distributes Left, Center & Right */
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 15px;
+  border-radius: 50px;
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+  box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.1);
+  text-decoration: none;
+  color: #00ffee;
+  z-index: 5;
+}
+
+/* ✅ Hover Effect */
+.daily-mission-social-card:hover {
+  background: rgba(0, 255, 255, 0.2);
+  transform: scale(1.02);
+  z-index: 5;
+}
+
+/* ✅ Left Logo */
+.daily-mission-social-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+  z-index: 5;
+}
+
+/* ✅ Right Logo */
+.daily-mission-social-right-logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+  z-index: 5;
+}
+
+/* ✅ Hover Animation for Logos */
+.daily-mission-social-card:hover .daily-mission-social-logo,
+.daily-mission-social-card:hover .daily-mission-social-right-logo {
+  transform: scale(1.1);
+  z-index: 5;
+}
+
+/* ✅ Text Container (Centered) */
+.daily-mission-social-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1; /* Makes text take up space */
+  z-index: 5;
+}
+
+/* ✅ Title (First Line) */
+.daily-mission-social-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 5;
+}
+
+/* ✅ Coins (Second Line) */
+.daily-mission-social-coins {
+  font-size: 16px;
+  color: #ffd700; /* Gold */
+  font-weight: bold;
+  text-align: center;
+  z-index: 5;
+}

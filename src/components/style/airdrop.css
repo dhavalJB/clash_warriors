@@ -1,0 +1,10 @@
+.airdrop {
+    height: 98vh; /* Full height of the viewport */
+    width: 100vw; /* Full width of the viewport */
+    background-image: url("/assets/airdrop.bg.avif");
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-y: scroll;
+}
+

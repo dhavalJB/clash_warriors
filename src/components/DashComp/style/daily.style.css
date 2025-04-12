@@ -1,0 +1,51 @@
+.daily-tasks-container {
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+  position: relative; /* Keep it relative to the normal flow */
+}
+
+.daily-task {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000000a4;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.task-icon {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 20px;
+  opacity: 0.9;
+}
+
+.daily-task span {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 400px) {
+  .daily-tasks-container {
+    flex-direction: row; /* Stack tasks vertically */
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Space between tasks */
+  }
+
+  .task-icon {
+    width: 90px; /* Reduce icon size */
+    height: 90px;
+    border-radius: 15px;
+  }
+
+  .daily-task span {
+    font-size: 12px; /* Reduce text size slightly */
+  }
+}

@@ -1,0 +1,454 @@
+/* --- COLLECTIONS CONTAINER --- */
+.collections-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #0a0a0a;
+  padding-top: calc(280px + 20px);
+}
+
+/* --- HEADER --- */
+.collection-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0a0a0a;
+  border-bottom: 2px solid #646464;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.collection-header-left {
+  font-size: 20px;
+  font-weight: bold;
+  color: #f5f5f5;
+}
+
+.collection-header-right {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #696969;
+  border-radius: 20px;
+  animation: sparkle 3.5s infinite;
+  padding-right: 30px;
+  margin-right: 15px;
+}
+
+@keyframes sparkle {
+  0% {
+    border-color: #696969;
+  }
+
+  50% {
+    border-color: #ffffff;
+  }
+
+  100% {
+    border-color: #696969;
+  }
+}
+
+.crypto-icon {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+  filter: drop-shadow(0px 2px 4px rgba(255, 255, 255, 0.3));
+  border-radius: 50%;
+  border: 2px solid #00ffa2;
+}
+
+.total-crypto {
+  font-size: 18px;
+  font-weight: 500;
+  color: #00ffa2;
+  text-shadow: 0px 2px 6px rgba(0, 255, 162, 0.8);
+}
+
+.collections-nftcontenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.collections-nftcard {
+  width: 250px;
+  height: 320px;
+  border-radius: 20px;
+  position: absolute;
+  transition: 0.6s ease-out;
+  transform-origin: center center;
+  z-index: 1;
+}
+
+.collections-nftcard-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.collections-nftcard-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.collections-nftprincipal {
+  transform: translateX(0);
+  z-index: 10; /* This ensures the current image is on top */
+}
+
+.collections-nftsiguiente {
+  transform: translateX(120%) scale(0.8) perspective(40px) rotateY(-0.5deg);
+  filter: blur(3px);
+  opacity: 0.7;
+  z-index: 8;
+}
+
+.collections-nftanterior {
+  transform: translateX(-120%) scale(0.8) perspective(40px) rotateY(0.5deg);
+  filter: blur(3px);
+  opacity: 0.7;
+  z-index: 8;
+}
+
+.collections-nftocultar {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.collection-name {
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+#div-transparent-previous,
+#div-transparent-next {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  z-index: 9;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+}
+
+#div-transparent-previous {
+  left: 0;
+}
+
+#div-transparent-next {
+  right: 0;
+}
+
+#div-transparent-previous:hover,
+#div-transparent-next:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* --- GROUP TITLE --- */
+.group-title {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 20px; /* Ensures title has proper space */
+}
+
+/* */
+
+.collection-filter-search {
+  position: fixed;
+  z-index: 21; /* Lower z-index to place below the main header */
+  top: 80px; /* Place it below the main header */
+  width: 100%;
+  height: 60px;
+  background-color: #00000091;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-bottom: 20px; /* Add some space below it */
+}
+
+/* Container */
+.filter-container {
+  display: flex;
+  align-items: center;
+  position: relative; /* Dropdown needs to be positioned relative to this */
+}
+
+.collection-search-icon {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  filter: drop-shadow(0px 2px 4px rgba(255, 255, 255, 0.3));
+}
+
+/* Filter Icon */
+.filter-icon {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  filter: drop-shadow(0px 2px 4px rgba(255, 255, 255, 0.3));
+  transition: transform 0.2s ease-in-out;
+  position: absolute; /* Fix position of the icon */
+  padding-top: 5px;
+  padding-left: 15px;
+}
+
+.filter-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Filter Options */
+.filter-options {
+  display: flex;
+  align-items: center;
+  position: absolute; /* Keep dropdown fixed below the icon */
+  top: 40px; /* Adjust the top position below the filter icon */
+  left: 0; /* Align to the left of the filter icon */
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+/* Category Selector */
+.category-selector {
+  background: #1b1b1b;
+  color: white;
+  padding: 10px 15px;
+  min-width: 150px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #555;
+  transition: all 0.2s ease-in-out;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.category-selector:hover {
+  background: #444;
+}
+
+/* Dropdown List */
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #020202;
+  color: white;
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  width: 100%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* Individual category items animation */
+.dropdown-list li {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  text-align: center;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideInLeft 0.3s ease-out forwards;
+  animation-delay: var(--delay); /* Dynamic delay for each item */
+}
+
+.dropdown-list li:hover {
+  background: #444;
+}
+
+/* Slide in from left animation */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.collection-search-icon {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  filter: drop-shadow(0px 2px 4px rgba(255, 255, 255, 0.3));
+  transition: transform 0.2s ease-in-out;
+  padding-top: 5px;
+  padding-right: 15px;
+  position: relative;
+}
+
+/* Centered Search Bar */
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  visibility: hidden; /* Hidden by default */
+  opacity: 0; /* Hidden by default */
+  transition:
+    visibility 0s,
+    opacity 0.3s ease-in-out;
+  margin-left: 20px; /* Space between the filter icon and search bar */
+  flex-grow: 1; /* Take remaining space between icons */
+}
+
+/* Show the search bar when active */
+.search-bar-container.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Search Bar input */
+.colleciton-search-input {
+  z-index: 1;
+  width: 50px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #444;
+  background-color: #333;
+  color: white;
+  margin-right: -30px; /* Space between the input and search icon */
+  transition: all 0.2s ease-in-out;
+}
+
+/* Adjusted visibility of the input field */
+.colleciton-search-input:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5); /* Optional effect */
+}
+
+/* Expand search input width when visible */
+.search-bar-container.visible .colleciton-search-input {
+  width: 220px; /* Expanded width when visible */
+}
+
+.search-results {
+  position: absolute;
+  top: 100%; /* Position it right below the search bar */
+  left: 50%;
+  transform: translateX(-50%); /* Center it horizontally */
+  width: 220px; /* Match search bar width */
+  background-color: #000000;
+  border-radius: 10px;
+  border: 1px solid #444;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 10;
+  padding: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.search-results h4 {
+  color: white;
+  margin-bottom: 8px;
+}
+
+.search-results ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-results li {
+  padding: 4px 4px;
+  cursor: pointer;
+  color: white;
+  transition: background 0.2s ease-in-out;
+  display: flex;
+  justify-content: space-between; /* Push elements apart */
+  align-items: center;
+}
+
+.search-results li:hover {
+  background-color: #444;
+}
+
+.search-results-card-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  object-fit: contain;
+  margin-left: auto; /* Push the image to the right */
+}
+
+/* Width of the entire scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- EACH COLLECTION SECTION --- */
+.collection-section {
+  width: 100%;
+  max-width: 1200px; /* Keeps content centered */
+  text-align: center;
+  margin-bottom: 140px; /* 🔥 Reduced space between sections */
+}
+
+/* --- SLIDESHOW WRAPPER (Fix Overlapping) --- */
+.slideshow-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 180px; /* Spacing between slideshow and button */
+  position: relative;
+  width: 100%;
+}
+
+/* --- EXPLORE BUTTON --- */
+.explore-btn {
+  padding: 12px 24px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+}
+
+.explore-btn:hover {
+  background-color: #e68900;
+}
+
+@media (max-width: 768px) {
+  .collections-container {
+    padding-top: calc(200px + 60px); /* Adjust for mobile or smaller screens */
+  }
+}

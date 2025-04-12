@@ -1,0 +1,244 @@
+{
+  "cards": [
+    {
+      "cardID": "card-1",
+      "cardName": "Card 1",
+      "weightFactors": {
+        "agility": 1.2,
+        "armor": 1.1,
+        "attack": 1.5,
+        "intelligence": 1.3,
+        "powers": 1.4,
+        "vitality": 1.2
+      }
+    },
+    {
+      "cardID": "card-2",
+      "cardName": "Card 2",
+      "weightFactors": {
+        "agility": 1.0,
+        "armor": 1.3,
+        "attack": 1.4,
+        "intelligence": 1.2,
+        "powers": 1.5,
+        "vitality": 1.4
+      }
+    },
+    {
+      "cardID": "card-3",
+      "cardName": "Card 3",
+      "weightFactors": {
+        "agility": 1.0,
+        "armor": 1.4,
+        "attack": 1.2,
+        "intelligence": 1.1,
+        "powers": 1.0,
+        "vitality": 1.3
+      }
+    },
+    {
+      "cardID": "card-4",
+      "cardName": "Card 4",
+      "weightFactors": {
+        "agility": 1.1,
+        "armor": 1.2,
+        "attack": 1.3,
+        "intelligence": 1.5,
+        "powers": 1.4,
+        "vitality": 1.3
+      }
+    },
+    {
+      "cardID": "card-5",
+      "cardName": "Card 5",
+      "weightFactors": {
+        "agility": 1.3,
+        "armor": 1.2,
+        "attack": 1.6,
+        "intelligence": 1.4,
+        "powers": 1.5,
+        "vitality": 1.1
+      }
+    },
+    {
+      "cardID": "card-6",
+      "cardName": "Card 6",
+      "weightFactors": {
+        "agility": 1.2,
+        "armor": 1.5,
+        "attack": 1.3,
+        "intelligence": 1.3,
+        "powers": 1.4,
+        "vitality": 1.2
+      }
+    },
+    {
+      "cardID": "card-7",
+      "cardName": "Card 7",
+      "weightFactors": {
+        "agility": 1.0,
+        "armor": 1.3,
+        "attack": 1.4,
+        "intelligence": 1.1,
+        "powers": 1.3,
+        "vitality": 1.5
+      }
+    },
+    {
+      "cardID": "card-8",
+      "cardName": "Card 8",
+      "weightFactors": {
+        "agility": 1.5,
+        "armor": 1.1,
+        "attack": 1.2,
+        "intelligence": 1.4,
+        "powers": 1.3,
+        "vitality": 1.2
+      }
+    },
+    {
+      "cardID": "card-9",
+      "cardName": "Card 9",
+      "weightFactors": {
+        "agility": 1.2,
+        "armor": 1.4,
+        "attack": 1.1,
+        "intelligence": 1.3,
+        "powers": 1.2,
+        "vitality": 1.5
+      }
+    },
+    {
+      "cardID": "card-10",
+      "cardName": "Card 10",
+      "weightFactors": {
+        "agility": 1.1,
+        "armor": 1.3,
+        "attack": 1.5,
+        "intelligence": 1.2,
+        "powers": 1.4,
+        "vitality": 1.1
+      }
+    },
+    {
+      "cardID": "card-11",
+      "cardName": "Card 11",
+      "weightFactors": {
+        "agility": 1.4,
+        "armor": 1.1,
+        "attack": 1.3,
+        "intelligence": 1.5,
+        "powers": 1.2,
+        "vitality": 1.4
+      }
+    },
+    {
+      "cardID": "card-12",
+      "cardName": "Card 12",
+      "weightFactors": {
+        "agility": 1.3,
+        "armor": 1.4,
+        "attack": 1.2,
+        "intelligence": 1.3,
+        "powers": 1.5,
+        "vitality": 1.1
+      }
+    },
+    {
+      "cardID": "card-13",
+      "cardName": "Card 13",
+      "weightFactors": {
+        "agility": 1.2,
+        "armor": 1.2,
+        "attack": 1.4,
+        "intelligence": 1.5,
+        "powers": 1.3,
+        "vitality": 1.2
+      }
+    },
+    {
+      "cardID": "card-14",
+      "cardName": "Card 14",
+      "weightFactors": {
+        "agility": 1.1,
+        "armor": 1.3,
+        "attack": 1.5,
+        "intelligence": 1.2,
+        "powers": 1.4,
+        "vitality": 1.4
+      }
+    },
+    {
+      "cardID": "card-15",
+      "cardName": "Card 15",
+      "weightFactors": {
+        "agility": 1.4,
+        "armor": 1.2,
+        "attack": 1.1,
+        "intelligence": 1.3,
+        "powers": 1.5,
+        "vitality": 1.3
+      }
+    },
+    {
+      "cardID": "card-16",
+      "cardName": "Card 16",
+      "weightFactors": {
+        "agility": 1.3,
+        "armor": 1.1,
+        "attack": 1.5,
+        "intelligence": 1.2,
+        "powers": 1.4,
+        "vitality": 1.5
+      }
+    },
+    {
+      "cardID": "card-17",
+      "cardName": "Card 17",
+      "weightFactors": {
+        "agility": 1.5,
+        "armor": 1.3,
+        "attack": 1.2,
+        "intelligence": 1.1,
+        "powers": 1.3,
+        "vitality": 1.4
+      }
+    },
+    {
+      "cardID": "card-18",
+      "cardName": "Card 18",
+      "weightFactors": {
+        "agility": 1.2,
+        "armor": 1.4,
+        "attack": 1.5,
+        "intelligence": 1.3,
+        "powers": 1.1,
+        "vitality": 1.3
+      }
+    },
+    {
+      "cardID": "card-19",
+      "cardName": "Card 19",
+      "weightFactors": {
+        "agility": 1.3,
+        "armor": 1.2,
+        "attack": 1.1,
+        "intelligence": 1.4,
+        "powers": 1.5,
+        "vitality": 1.2
+      }
+    },
+    {
+      "cardID": "card-20",
+      "cardName": "Card 20",
+      "weightFactors": {
+        "agility": 1.1,
+        "armor": 1.3,
+        "attack": 1.4,
+        "intelligence": 1.5,
+        "powers": 1.2,
+        "vitality": 1.4
+      }
+    }
+  ]
+}

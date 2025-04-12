@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="preload" as="image" href="/assets/icon.png" />
+    <script src="https://sad.adsgram.ai/js/sad.min.js"></script>
+    <title>Clash Warriors</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      document.addEventListener('contextmenu', (event) =>
+        event.preventDefault()
+      )
+      document.addEventListener('keydown', (event) => {
+        if (
+          event.key === 'F12' ||
+          (event.ctrlKey &&
+            event.shiftKey &&
+            (event.key === 'I' || event.key === 'J')) ||
+          (event.ctrlKey && event.key === 'U')
+        ) {
+          event.preventDefault()
+        }
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+.dashboard {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-image: url('/assets/mainBG.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative; /* Needed for pseudo-element positioning */
+}
+
+.dashboard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.185); /* Adjust color & opacity */
+}

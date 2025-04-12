@@ -1,0 +1,324 @@
+.defaultDeck-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+  max-width: 400px;
+}
+
+.defaultDeck-allCards {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  margin-top: 68px;
+  overflow-y: auto;
+  max-height: 350px;
+}
+
+.defaultDeck-bottom {
+  text-align: center;
+  position: fixed;
+  bottom: 0px; /* Adjust spacing from bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto; /* Adjust as needed */
+  border-top: 2px solid #ffffff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #444;
+  width: 100%;
+}
+
+.defaultDeck-title {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Mobile-friendly 5x2 grid */
+.defaultDeck-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  justify-content: center;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+/* Card size for mobile */
+.defaultDeck-card {
+  position: relative;
+  width: 65px; /* Smaller size for mobile */
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.defaultDeck-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+  border: 1px solid #fff;
+}
+
+/* Stats overlay */
+.defaultDeck-stats {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  background: rgba(0, 0, 0, 0.904);
+  color: white;
+  padding: 2px 2px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  min-width: 20px;
+  min-height: 15px;
+}
+
+.defaultDeck-remove-card-btn {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  min-width: 20px;
+}
+/* No cards found message */
+.defaultDeck-noCards {
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* Placeholder card style */
+.defaultDeck-placeholder {
+  width: 65px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #aaa;
+  color: #666;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Selector */
+
+/* Full-width header */
+.selector-header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  background-color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: #504d4d 2px solid;
+  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.5);
+  position: fixed;
+  z-index: 11;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* Container for Toggle Button + Dropdown */
+.selector-toggle-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Toggle Button Container */
+.selector-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  box-shadow: 0 0 10px rgba(0, 255, 234, 0.7);
+  margin-left: 10px;
+}
+
+/* Toggle Button Icon */
+.selector-toggle-icon {
+  width: 25px;
+  height: 25px;
+  filter: drop-shadow(0 0 5px #00ffea);
+  transition:
+    filter 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+}
+
+/* Rotate Icon on Click */
+.selector-toggle.open .selector-toggle-icon {
+  transform: rotate(90deg);
+  filter: drop-shadow(0 0 10px #ff00ff);
+}
+
+/* Centered selected character name */
+.selector-selected-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Keeps it centered */
+  white-space: nowrap;
+}
+
+/* Dropdown Selector (Opens Below Button) */
+.selector-container {
+  position: absolute;
+  top: 40px; /* Drops down below button */
+  left: 0;
+  background: #2a2a2a;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  max-height: 350px;
+  overflow: auto;
+  z-index: 11;
+}
+
+/* Expanded Selector Bar */
+.selector-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Scrollable Section */
+.selector-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  max-height: 380px;
+  padding-right: 5px;
+}
+
+/* Each Character Container */
+.selector-character {
+  flex: 0 0 auto;
+  text-align: center;
+  width: 100px;
+  cursor: pointer;
+}
+
+.selector-character:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+/* Character Icon */
+.selector-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  transition: transform 0.2s ease-in-out;
+}
+
+.selector-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Character Name */
+.selector-name {
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* Scrollbar Styling */
+.selector-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.selector-scroll::-webkit-scrollbar-track {
+  background: #444;
+  border-radius: 5px;
+}
+
+.selector-scroll::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.selector-scroll::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+/* Container for the filter icon (top-right position) */
+.defaultDeck-top-right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1001;
+  padding: 5px;
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+  filter: drop-shadow(0 0 5px rgba(0, 255, 234, 0.7)); /* Soft glow */
+  cursor: pointer;
+}
+
+/* Filter Icon */
+.defaultDeck-filter-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 234, 0.7)); /* Soft glow */
+}
+
+.card-selected {
+  background-color: black; /* Makes selected area black */
+  border: 2px solid #555; /* Optional: Adds a subtle border */
+}
+
+.black-card-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  border-radius: 8px;
+  background-image: url('/assets/gameLogo.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.no-card-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}

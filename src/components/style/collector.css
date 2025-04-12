@@ -1,0 +1,35 @@
+.collector-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 40px;
+  color: rgb(255, 255, 255);
+  background-color: #161616;
+  width: 100%;
+  min-height: 100vh; /* Make sure it takes up at least the full height */
+  overflow-y: auto; /* Ensure it scrolls properly */
+  padding: 0;
+  list-style-type: none;
+}
+
+.collector-nft-card {
+  width: calc(50% - 10px); /* Ensure two cards per row, with a gap */
+  height: 350px;
+  border-radius: 20px;
+  background-color: #161616;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin: 10px 5px; /* Adds margin between the cards */
+  overflow: hidden;
+}
+
+.collector-nft-card:last-child {
+  margin-bottom: 130px;
+}
+
+.collector-nft-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

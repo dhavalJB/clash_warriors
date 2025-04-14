@@ -302,7 +302,7 @@ const Battle = ({ user }) => {
   const [isFetchingResults, setIsFetchingResults] = useState(false)
   const [showDialog, setShowDialog] = useState(false)
   const [tutorialStep, setTutorialStep] = useState(0)
-  const [hasFinished, setHasFinished] = useState(false); // Track if the user manually finishes the tutorial
+  const [hasFinished, setHasFinished] = useState(false) // Track if the user manually finishes the tutorial
 
   const [remainingSynergy, setRemainingSynergy] = useState({
     currentPlayer: 0, // Dynamic remaining synergy for current player
@@ -755,73 +755,73 @@ const Battle = ({ user }) => {
   // Tutorials
 
   useEffect(() => {
-    const tutorialComplete = localStorage.getItem('battleTutorialEnds');
+    const tutorialComplete = localStorage.getItem('battleTutorialEnds')
     if (tutorialComplete === 'true') {
-      setHasFinished(true); // If completed, don't start the tutorial
-      setTutorialStep(6); // Skip tutorial steps and directly go to the next phase (step 6 or game phase)
+      setHasFinished(true) // If completed, don't start the tutorial
+      setTutorialStep(6) // Skip tutorial steps and directly go to the next phase (step 6 or game phase)
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
-    if (hasFinished) return; // Don't run the tutorial logic if it's already finished
+    if (hasFinished) return // Don't run the tutorial logic if it's already finished
 
     if (tutorialStep === 0) {
       const timer = setTimeout(() => {
-        setTutorialStep(1); // Move to card selection step
-      }, 6000); // Wait 6 seconds before transitioning to step 1
+        setTutorialStep(1) // Move to card selection step
+      }, 6000) // Wait 6 seconds before transitioning to step 1
 
-      return () => clearTimeout(timer);
+      return () => clearTimeout(timer)
     }
-  }, [tutorialStep, hasFinished]); // Run effect only if tutorial is not finished
+  }, [tutorialStep, hasFinished]) // Run effect only if tutorial is not finished
 
   useEffect(() => {
-    if (hasFinished) return; // Skip tutorial steps if finished
+    if (hasFinished) return // Skip tutorial steps if finished
 
     if (tutorialStep === 2) {
       const timeout = setTimeout(() => {
-        setTutorialStep(3); // Move to the next step (Step 3)
-      }, 5000); // Transition after 5 seconds
+        setTutorialStep(3) // Move to the next step (Step 3)
+      }, 5000) // Transition after 5 seconds
 
-      return () => clearTimeout(timeout);
+      return () => clearTimeout(timeout)
     }
-  }, [tutorialStep, hasFinished]);
+  }, [tutorialStep, hasFinished])
 
   useEffect(() => {
-    if (hasFinished) return; // Skip tutorial steps if finished
+    if (hasFinished) return // Skip tutorial steps if finished
 
     if (tutorialStep === 4) {
       const timer = setTimeout(() => {
-        setTutorialStep(5); // Move to step 5 after 11 seconds
-      }, 11000);
+        setTutorialStep(5) // Move to step 5 after 11 seconds
+      }, 11000)
 
-      return () => clearTimeout(timer);
+      return () => clearTimeout(timer)
     }
-  }, [tutorialStep, hasFinished]);
+  }, [tutorialStep, hasFinished])
 
   useEffect(() => {
-    if (hasFinished) return; // Skip tutorial steps if finished
+    if (hasFinished) return // Skip tutorial steps if finished
 
     if (tutorialStep === 5) {
       const timer = setTimeout(() => {
         if (!hasFinished) {
-          finishTutorial(); // Automatically finish the tutorial after 7 seconds
+          finishTutorial() // Automatically finish the tutorial after 7 seconds
         }
-      }, 7000); // After 7 seconds, finish the tutorial automatically if the user hasn't clicked "Finish"
+      }, 7000) // After 7 seconds, finish the tutorial automatically if the user hasn't clicked "Finish"
 
-      return () => clearTimeout(timer);
+      return () => clearTimeout(timer)
     }
-  }, [tutorialStep, hasFinished]);
+  }, [tutorialStep, hasFinished])
 
   const handleFinishTutorial = () => {
-    setHasFinished(true);
-    finishTutorial();
-  };
+    setHasFinished(true)
+    finishTutorial()
+  }
 
   // Save to localStorage and mark the tutorial as complete
   const finishTutorial = () => {
-    localStorage.setItem('battleTutorialEnds', 'true'); // Mark the tutorial as finished in localStorage
-    setTutorialStep(6); // Proceed to the next tutorial step or game phase
-  };
+    localStorage.setItem('battleTutorialEnds', 'true') // Mark the tutorial as finished in localStorage
+    setTutorialStep(6) // Proceed to the next tutorial step or game phase
+  }
 
   // End
 
@@ -932,30 +932,30 @@ const Battle = ({ user }) => {
       )}
 
       <div className="battlePage-footer">
-      <div>
-      {/* Step 5 Button */}
-      <button
-        className={`battlePage-leave-button ${tutorialStep === 5 ? 'battle-tut-highlight-border-button' : ''}`} // Highlight button on Step 5
-        onClick={handleLeaveGame}
-      >
-        🌀
-      </button>
-
-      {/* Step 5 Tutorial Message */}
-      {tutorialStep === 5 && (
-        <div className="step-5-tutorial-message">
-          <p>Click here to leave the match early.</p>
-          
-          {/* Finish Button */}
+        <div>
+          {/* Step 5 Button */}
           <button
-            className="finish-tutorial-button"
-            onClick={handleFinishTutorial}
+            className={`battlePage-leave-button ${tutorialStep === 5 ? 'battle-tut-highlight-border-button' : ''}`} // Highlight button on Step 5
+            onClick={handleLeaveGame}
           >
-            Finish Tutorial
+            🌀
           </button>
+
+          {/* Step 5 Tutorial Message */}
+          {tutorialStep === 5 && (
+            <div className="step-5-tutorial-message">
+              <p>Click here to leave the match early.</p>
+
+              {/* Finish Button */}
+              <button
+                className="finish-tutorial-button"
+                onClick={handleFinishTutorial}
+              >
+                Finish Tutorial
+              </button>
+            </div>
+          )}
         </div>
-      )}
-    </div>
 
         <div className="battle-tut-phase-name-wrapper">
           <div

@@ -1,4 +1,4 @@
-
+/*
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { realtimeDB } from "./firebase";
@@ -194,8 +194,8 @@ const MainContent = React.memo(({ user, status }) => {
 });
 
 export default App;
+*/
 
-/*
 import React, { useState, useEffect, Suspense, lazy } from 'react'
 import {
   BrowserRouter as Router,
@@ -405,4 +405,3 @@ const MainContent = React.memo(({ user, status }) => {
 })
 
 export default App
-*/

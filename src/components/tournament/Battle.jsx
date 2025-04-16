@@ -583,7 +583,7 @@ const Battle = ({ user }) => {
 
       // Navigate to the tournament screen after cancellation
       navigate('/tournament')
-      handleWatchAd()
+      showAdsgramInterstitial()
     } catch (error) {
       console.error('Error canceling match:', error)
     }

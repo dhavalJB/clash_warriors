@@ -18,6 +18,7 @@ import MyCollection from "./components/MyCollection";
 import BuildDeck from "./components/tournament/BuildDeck";
 import Battle from "./components/tournament/Battle";
 import LeaderBoard from "./components/tournament/LeaderBoard";
+import Settings from "./components/Settings";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -34,6 +35,15 @@ function App() {
       tg.BackButton.onClick(() => {
         window.history.back();
       });
+
+      tg.SettingsButton
+      .show()
+      .onClick(() => {
+        // Your in-app settings logic here
+        // Navigate to settings page or open modal
+        window.location.href = "/settings"; // Or use a router if you have one
+      });
+      
       const telegramUser = tg.initDataUnsafe?.user;
       if (telegramUser) {
         setStatus("Verifying user...");
@@ -186,6 +196,8 @@ const MainContent = React.memo(({ user, status }) => {
         <Route path="/builddeck" element={<BuildDeck user={user} status={status} />} />
         <Route path="/battle/:matchID" element={<Battle user={user} status={status} />} />
         <Route path="/leaderboard" element={<LeaderBoard user={user} status={status} />} />
+        <Route path="/settings" element={<Settings user={user} status={status} />}
+        />
       </Routes>
 
       {!shouldHideFooter && <Footer />}

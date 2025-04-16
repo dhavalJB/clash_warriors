@@ -33,7 +33,9 @@ const Tournament = ({ user }) => {
   const [showDeckErrorModal, setShowDeckErrorModal] = useState(false)
   const [tutorialStep, setTutorialStep] = useState(0)
   const [showTutorial, setShowTutorial] = useState(false)
-  const [soundEnabled, setSoundEnabled] = useState(JSON.parse(localStorage.getItem('soundEnabled')) ?? true);
+  // const [soundEnabled, setSoundEnabled] = useState(
+  //   JSON.parse(localStorage.getItem('soundEnabled')) ?? true
+  // )
 
   const navigate = useNavigate()
 
@@ -339,7 +341,6 @@ const Tournament = ({ user }) => {
     return () => unsubscribe()
   }, [])
 
-
   useEffect(() => {
     const tutorialDone = localStorage.getItem('TournamentTutorial')
     if (!tutorialDone) {
@@ -362,11 +363,11 @@ const Tournament = ({ user }) => {
     navigate('/builddeck')
   }
 
-  const handleToggleSound = () => {
-    const newSoundState = !soundEnabled;
-    setSoundEnabled(newSoundState);
-    localStorage.setItem('soundEnabled', JSON.stringify(newSoundState)); // Save the preference to localStorage
-  };
+  // const handleToggleSound = () => {
+  //   const newSoundState = !soundEnabled
+  //   setSoundEnabled(newSoundState)
+  //   localStorage.setItem('soundEnabled', JSON.stringify(newSoundState)) // Save the preference to localStorage
+  // }
 
   if (error) return <h2></h2>
 
@@ -475,19 +476,18 @@ const Tournament = ({ user }) => {
         )}
       </div>
 
-      <div className="sound-toggle-container">
-  <label className="sound-toggle-label">
-    Sound Effects
-    <input
-      type="checkbox"
-      checked={soundEnabled}
-      onChange={handleToggleSound}
-      className="sound-toggle-input"
-    />
-    <span className="sound-toggle-slider"></span>
-  </label>
-</div>
-
+      {/* <div className="sound-toggle-container">
+        <label className="sound-toggle-label">
+          Sound Effects
+          <input
+            type="checkbox"
+            checked={soundEnabled}
+            onChange={handleToggleSound}
+            className="sound-toggle-input"
+          />
+          <span className="sound-toggle-slider"></span>
+        </label>
+      </div> */}
 
       <DefaultDeckModal
         isOpen={isModalOpen}

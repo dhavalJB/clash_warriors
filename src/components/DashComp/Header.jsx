@@ -59,20 +59,37 @@ const calculateProgress = (xp, level) => {
 }
 
 const calculateRank = (level) => {
-  if (level < 1) return 'Unranked';
+  if (level < 1) return 'Unranked'
 
   const ranks = [
-    'Bronze I', 'Bronze II', 'Bronze III', 'Bronze IV',
-    'Silver I', 'Silver II', 'Silver III', 'Silver IV',
-    'Gold I', 'Gold II', 'Gold III', 'Gold IV',
-    'Platinum', 'Emerald', 'Sapphire', 'Ruby',
-    'Diamond', 'Master', 'Grandmaster', 'Immortal'
-  ];
+    'Bronze I',
+    'Bronze II',
+    'Bronze III',
+    'Bronze IV',
+    'Silver I',
+    'Silver II',
+    'Silver III',
+    'Silver IV',
+    'Gold I',
+    'Gold II',
+    'Gold III',
+    'Gold IV',
+    'Platinum',
+    'Emerald',
+    'Sapphire',
+    'Ruby',
+    'Diamond',
+    'Master',
+    'Grandmaster',
+    'Immortal',
+  ]
 
-  const levelsPerRank = 5; // Each rank covers 5 levels
+  const levelsPerRank = 5 // Each rank covers 5 levels
 
-  return ranks[Math.min(Math.floor((level - 1) / levelsPerRank), ranks.length - 1)];
-};
+  return ranks[
+    Math.min(Math.floor((level - 1) / levelsPerRank), ranks.length - 1)
+  ]
+}
 
 function Header({ user }) {
   const [userData, setUserData] = useState(null)
@@ -136,9 +153,8 @@ function Header({ user }) {
 
   const handleLeaderboardClick = () => {
     window.location.href = '/leaderboard'
-    triggerHapticFeedback();
+    triggerHapticFeedback()
   }
-
 
   if (loading) return <p>Loading...</p>
 

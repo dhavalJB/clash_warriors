@@ -56,6 +56,18 @@ function Tutorial({ user, onClose }) {
       `,
     },
     {
+      title: 'How do I access FAQ & Contact Support?',
+      content: `
+        🛠️ <strong>Need help fast?</strong><br/><br/>
+        • Tap the <strong>menu icon</strong> in the top-right corner.<br/>
+        • Go to <strong>Settings → FAQ & Support</strong>.<br/>
+        • Browse answers or <strong>submit a question</strong>.<br/><br/>
+        🤖 Or just type <strong>/support</strong> in the bot for direct help!<br/><br/>
+        Help is always a tap away. 💬
+      `,
+      image: '/assets/faq.png',
+      },
+    {
       title: 'Share, Play, and Earn More 💖',
       content: `
         At <strong>Clash Warriors</strong>, it’s not just about playing the game – it’s about creating memories, connecting with others, and growing together. 🌍💫
@@ -67,6 +79,7 @@ function Tutorial({ user, onClose }) {
         This isn’t just a game. It’s a community, a movement, a revolution. Are you ready to lead? The battlefield is waiting, and the world is yours to conquer. 💪💥
       `,
     },
+   
   ]
 
   useEffect(() => {

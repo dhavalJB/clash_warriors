@@ -19,6 +19,7 @@ import BuildDeck from "./components/tournament/BuildDeck";
 import Battle from "./components/tournament/Battle";
 import LeaderBoard from "./components/tournament/LeaderBoard";
 import Settings from "./components/Settings";
+import Premium from "./components/Premium";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -198,6 +199,7 @@ const MainContent = React.memo(({ user, status }) => {
         <Route path="/leaderboard" element={<LeaderBoard user={user} status={status} />} />
         <Route path="/settings" element={<Settings user={user} status={status} />}
         />
+        <Route path="/premium" element={<Premium user={user}/>} />
       </Routes>
 
       {!shouldHideFooter && <Footer />}
